@@ -33,20 +33,16 @@ export default function Textform(props) {
             setText(newText)
         }
     }
-    const [mode,setMode]=useState("white");
-    const [textmode,settextMode]=useState("black");
+    const [mode,setMode]=useState('white');
+    const [textmode,setTextMode]=useState('black');
 
     const DarkMode=()=>{
-        try {
-            if (mode==='white' && textmode==='black') {
+        if (mode==='white' && textmode==='black') {
             setMode('black');
-            settextMode('white')
-        } else {
+            setTextMode('white');}
+        else{
             setMode('white');
-            settextMode('black');
-        }
-        } catch (error) {
-            alert('error')
+            setTextMode('black');
         }
     }
     const FirstCap=()=>{
@@ -64,7 +60,7 @@ export default function Textform(props) {
             <>
             <div className='flex flex-col items-center justify-center'>
                     <h1 className='text-3xl object-center'>{props.heading}</h1>
-                    <textarea placeholder="Enter a text"  value={text} onChange={onChangetext} rows={10} cols={100} className={`bg-${mode} w-50 flex items-center justify-center text-${textmode} rounded-lg border-2 border-blue-600 p-2`}></textarea>
+                    <textarea placeholder="Enter a text"  value={text} onChange={onChangetext} rows={10} cols={100} className={`bg-${mode} w-50 flex items-center justify-center text-${textmode} rounded-lg border-2 border-blue-600`}></textarea>
                 <div className='p-3 flex flex-row items-center justify-center m-1'>
                         <button onClick={UpperCase} className='bg-blue-500 p-2 m-1 rounded-lg'>UpperCase</button>
                         <button onClick={LowerCase} className='bg-blue-500 p-2 m-2 rounded-lg'>LowerCase</button>
