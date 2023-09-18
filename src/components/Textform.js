@@ -64,10 +64,12 @@ export default function Textform(props) {
     const finalstring=whitespace.join('');
     return (
             <>
-            <div className='flex flex-col items-center justify-center'>
+            <div className={`flex flex-col items-center justify-center bg-${mode} text-${textmode} h-100 `}>
                     <h1 className='text-3xl object-center'>{props.heading}</h1>
                     {/* text aera */}
-                    <textarea placeholder="Enter a text"  value={text} onChange={onChangetext} rows={10} cols={100} className={`bg-${mode} w-50 flex items-center justify-center text-${textmode} rounded-lg border-2 border-blue-600`}></textarea>
+                    <div>
+                    <textarea placeholder="Enter a text"  value={text} onChange={onChangetext} rows={10} cols={100} className={`w-50 flex items-center justify-center  rounded-lg border-2 border-blue-600 bg-${mode} text-${textmode}`}></textarea>
+                    </div>
                 <div className='p-3 flex flex-row items-center justify-center m-1'>
                         <button onClick={UpperCase} className='bg-blue-500 p-2 m-1 rounded-lg'>UpperCase</button>
                         <button onClick={LowerCase} className='bg-blue-500 p-2 m-2 rounded-lg'>LowerCase</button>
