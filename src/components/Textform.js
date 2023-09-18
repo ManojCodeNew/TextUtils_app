@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 export default function Textform(props) {
     const [text,setText]=useState("");
-    
-    
+    // Onchange section
     const onChangetext=(event)=>{
         setText(event.target.value);
     }
+    //Converting to uppercase
     const UpperCase=()=>{
         if (text==='') {
             alert("Text is empty")
@@ -16,6 +16,7 @@ export default function Textform(props) {
             setText(uppercasetext)
         }
     }
+    // Converting LowerCase
     const LowerCase=()=>{
         if (text==='') {
             alert("Text is empty")
@@ -25,6 +26,7 @@ export default function Textform(props) {
         }
 
     }
+    // Clear text section
     const ClearText=()=>{
         if (text==='') {
             alert("Text is empty")
@@ -33,6 +35,8 @@ export default function Textform(props) {
             setText(newText)
         }
     }
+
+    // Mode section
     const [mode,setMode]=useState('white');
     const [textmode,setTextMode]=useState('black');
 
@@ -45,10 +49,12 @@ export default function Textform(props) {
             setTextMode('black');
         }
     }
+    // First letter Capital section
     const FirstCap=()=>{
         const firstletcap=text.charAt(0).toUpperCase()+text.slice(1);
         setText(firstletcap);
     }
+    // text copy setion
     const Copy=()=>{
             navigator.clipboard.writeText(text);
     }
